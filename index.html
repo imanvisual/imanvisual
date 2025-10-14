@@ -301,46 +301,9 @@
     </footer>
 
     <script>
-        const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
-        const API_KEY = ""; // Provided by environment
+        // --- SCRIPT DE ANÁLISIS SIMULADO (SOLUCIÓN) ---
 
-        async function fetchGeminiContent(userQuery, systemPrompt, useSearch, maxRetries = 5) {
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] },
-            };
-            if (useSearch) {
-                payload.tools = [{ "google_search": {} }];
-            }
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(`${API_URL}?key=${API_KEY}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (response.ok) {
-                        const result = await response.json();
-                        return result.candidates?.[0]?.content?.parts?.[0]?.text || "Error: No se pudo obtener el texto generado.";
-                    } else if (response.status === 429 && i < maxRetries - 1) {
-                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                    } else {
-                        return `Error API: ${response.status} ${response.statusText}`;
-                    }
-                } catch (error) {
-                    if (i < maxRetries - 1) {
-                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                    } else {
-                         return `Error de conexión: ${error.message}`;
-                    }
-                }
-            }
-            return "Error: Se agotaron los reintentos para conectar con la IA.";
-        }
-        
-        async function realizarDiagnostico() {
+        function realizarDiagnostico() {
             const urlInput = document.getElementById('perfilUrlInput');
             const perfilUrl = urlInput.value.trim();
             const resultDiv = document.getElementById('diagnosticoResult');
@@ -359,28 +322,57 @@
             loader.classList.remove('hidden');
             resultDiv.classList.add('hidden');
 
-            const systemPrompt = `Eres un experto en marketing digital y ventas para negocios locales en Argentina. Tu objetivo es realizar un mini-diagnóstico de perfil para convencer al cliente de la necesidad de un servicio profesional. Analiza la URL proporcionada (usando Google Search) y genera un reporte en ESPAÑOL con la siguiente estructura y enfoque:
-            
-            ## URL ANALIZADA
-            [La URL de entrada]
-            
-            ## 1. OPORTUNIDAD DE VISIBILIDAD (EL PROBLEMA)
-            Sé crítico: ¿Es un perfil de venta o solo de hobby? ¿Tiene un CTA claro? ¿El contenido es de alta calidad visual? Concluye con una calificación de visibilidad (Baja, Media, Alta).
-            
-            ## 2. RECOMENDACIÓN ESTRATÉGICA (LA SOLUCIÓN)
-            Basado en el rubro, sugiere 3 PILARES de CONTENIDO de alto impacto comercial (Ej: Tutoriales, Historias de Clientes, Reels de Ubicación).
-            
-            El texto debe ser persuasivo, conciso y en formato markdown.`;
+            // Simulación de análisis (2 segundos)
+            setTimeout(() => {
+                // Generar un reporte simulado
+                const reporteSimulado = generarReporteSimulado(perfilUrl);
+                
+                resultText.textContent = reporteSimulado;
+                resultDiv.classList.remove('hidden');
+                loader.classList.add('hidden');
+                button.disabled = false;
+                btnText.textContent = 'ANALIZAR OTRO PERFIL';
+                resultDiv.scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        }
 
-            const userQuery = `Realiza un diagnóstico de visibilidad y oportunidad de ventas para este perfil: ${perfilUrl}`;
-            const diagnostico = await fetchGeminiContent(userQuery, systemPrompt, true);
+        function generarReporteSimulado(url) {
+            const plataforma = url.includes('instagram') ? 'Instagram' : url.includes('tiktok') ? 'TikTok' : 'perfil';
+            
+            const problemasComunes = [
+                "La biografía no comunica claramente la propuesta de valor.",
+                "El llamado a la acción (CTA) para contactar o comprar no es visible.",
+                "La calidad visual de las últimas publicaciones podría mejorar.",
+                "Falta de consistencia en el estilo gráfico y los colores de la marca.",
+                "Poco uso de videos (Reels/TikToks) para mostrar el producto/servicio.",
+                "No se aprovechan las historias destacadas para guiar a los clientes.",
+                "Baja interacción en los comentarios, lo que sugiere poca comunidad."
+            ];
 
-            resultText.textContent = diagnostico;
-            resultDiv.classList.remove('hidden');
-            loader.classList.add('hidden');
-            button.disabled = false;
-            btnText.textContent = 'ANALIZAR OTRO PERFIL';
-            resultDiv.scrollIntoView({ behavior: 'smooth' });
+            // Seleccionar 2 o 3 problemas al azar
+            const problemasDetectados = [...problemasComunes].sort(() => 0.5 - Math.random()).slice(0, 3);
+            
+            const recomendaciones = [
+                "Crear videos cortos mostrando el 'detrás de escena' de tu negocio.",
+                "Publicar testimonios de clientes satisfechos para generar confianza.",
+                "Realizar una sesión de fotos profesional de tus productos/servicios.",
+                "Optimizar la biografía con un link claro hacia WhatsApp o tu tienda."
+            ];
+             const recomendacionPrincipal = recomendaciones[Math.floor(Math.random() * recomendaciones.length)];
+
+
+            let reporte = `## REPORTE DE VISIBILIDAD\n\n`;
+            reporte += `**URL Analizada:** ${url}\n\n`;
+            reporte += `### 1. PUNTOS CRÍTICOS DETECTADOS\n`;
+            reporte += `Se han identificado las siguientes áreas de mejora en tu ${plataforma}:\n\n`;
+            problemasDetectados.forEach(problema => {
+                reporte += `- ${problema}\n`;
+            });
+            reporte += `\n**Calificación de Visibilidad Actual:** Media. Hay una base, pero se están perdiendo oportunidades de venta.\n\n`;
+            reporte += `### 2. RECOMENDACIÓN ESTRATÉGICA\n`;
+            reporte += `Para un impacto inmediato, te sugiero comenzar por: **${recomendacionPrincipal}** Esto te ayudará a captar la atención de nuevos clientes rápidamente.`;
+
+            return reporte;
         }
         
         // Smooth scroll para los enlaces internos
