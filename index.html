@@ -1,156 +1,359 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImánVisual.ar — Video que Atrae y Convierte | Matías Fleischmann</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImánVisual.ar — Video que Atrae y Convierte | Matías Fleischmann</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Videos que atraen y convierten. ImánVisual.ar transforma tu visibilidad en ventas reales. Producción audiovisual y marketing estratégico para negocios de Entre Ríos.">
-    <meta name="keywords" content="ImánVisual, video marketing, contenido, Diamante, Paraná, Matías Fleischmann, audiovisual, marketing digital, ROI">
-    <link rel="canonical" href="https://imanvisual.netlify.app/">
-    <meta property="og:title" content="ImánVisual.ar — Video que Atrae y Convierte">
-    <meta property="og:description" content="Transformo tu visibilidad en ventas reales. Estrategia, video y contenido con propósito.">
-    <meta property="og:image" content="https://imanvisual.netlify.app/preview.jpg">
-    <meta property="og:type" content="website">
+  <!-- SEO -->
+  <meta name="description" content="Videos que atraen y convierten. ImánVisual.ar transforma tu visibilidad en ventas reales. Producción audiovisual y marketing estratégico para negocios de Entre Ríos.">
+  <meta name="keywords" content="ImánVisual, video marketing, contenido, Diamante, Paraná, Matías Fleischmann, audiovisual, marketing digital, ROI">
+  <link rel="canonical" href="https://imanvisual.netlify.app/">
+  <meta property="og:title" content="ImánVisual.ar — Video que Atrae y Convierte">
+  <meta property="og:description" content="Transformo tu visibilidad en ventas reales. Estrategia, video y contenido con propósito.">
+  <meta property="og:image" content="https://imanvisual.netlify.app/preview.jpg">
+  <meta property="og:type" content="website">
 
-    <!-- Estilos -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <!-- UI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-    <style>
-        body {font-family:'Inter',sans-serif;}
-        .gradient-bg{background:linear-gradient(135deg,#0A2342 0%,#2C6E8F 100%);}
-        .pulse-animation{animation:pulse 2s infinite;}
-        @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
-        .spinner{border:3px solid rgba(255,255,255,0.3);border-top:3px solid #fff;border-radius:50%;width:24px;height:24px;animation:spin 1s linear infinite;}
-        @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-        .play-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(251,191,36,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
-        .group:hover .play-button{background:rgba(251,191,36,1);transform:translate(-50%,-50%) scale(1.1);}
-        .chart-container{position:relative;height:300px;max-height:400px;}
-        @media(min-width:768px){.chart-container{height:350px;}}
-    </style>
+  <style>
+    body{font-family:'Inter',sans-serif;}
+    .gradient-bg{background:linear-gradient(135deg,#0A2342 0%,#2C6E8F 100%);}
+    .pulse-animation{animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+    .spinner{border:3px solid rgba(255,255,255,0.3);border-top:3px solid #fff;border-radius:50%;width:24px;height:24px;animation:spin 1s linear infinite;}
+    @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+    .play-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(251,191,36,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+    .group:hover .play-button{background:rgba(251,191,36,1);transform:translate(-50%,-50%) scale(1.1);}
+    .chart-container{position:relative;height:300px;max-height:400px;}
+    @media(min-width:768px){.chart-container{height:350px;}}
+  </style>
 
-    <!-- Google Analytics (reemplazar G-XXXXXXX por tu ID real) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXX');
-    </script>
+  <!-- Google Analytics: reemplazá G-XXXXXXX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date()); gtag('config','G-XXXXXXX');
+  </script>
 </head>
 
 <body class="bg-gray-50">
+  <!-- Header -->
+  <header class="gradient-bg text-white py-16 px-4" data-aos="fade-down">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+        TRANSFORMO TU VISIBILIDAD<br><span class="text-yellow-400">EN VENTAS REALES</span>
+      </h1>
+      <p class="text-xl md:text-2xl font-semibold mb-8 max-w-4xl mx-auto leading-relaxed">
+        Soy Matías, estratega digital. Convierto tu presencia online en una máquina de atraer clientes a través de video marketing y contenido de valor.
+      </p>
+      <div class="flex justify-center">
+        <a href="#plans" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 pulse-animation">
+          VER MIS SERVICIOS
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Header -->
-    <header class="gradient-bg text-white py-16 px-4" data-aos="fade-down">
-        <div class="max-w-6xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                TRANSFORMO TU VISIBILIDAD<br>
-                <span class="text-yellow-400">EN VENTAS REALES</span>
-            </h1>
-            <p class="text-xl md:text-2xl font-semibold mb-8 max-w-4xl mx-auto leading-relaxed">
-                Soy Matías, estratega digital. Convierto tu presencia online en una máquina de atraer clientes a través de video marketing y contenido de valor.
-            </p>
-            <a href="#plans" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 pulse-animation">VER MIS SERVICIOS</a>
+  <main>
+    <!-- SERVICIOS -->
+    <section id="plans" class="py-16 px-4 bg-white" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-black text-center mb-4 text-gray-800">Soluciones para Hacer Crecer tu Negocio</h2>
+          <p class="text-md text-gray-600">Con solo una venta generada por mi trabajo, la inversión se paga sola. Mi objetivo es que cada peso que inviertas vuelva a tu bolsillo multiplicado. Precios en ARS.</p>
         </div>
-    </header>
 
-    <main>
-        <!-- Secciones originales intactas, con data-aos -->
-        <section id="plans" class="py-16 px-4 bg-white" data-aos="fade-up">
-            <!-- (todo tu contenido de servicios tal como estaba) -->
-            <!-- ... -->
-        </section>
-
-        <section id="portfolio" class="py-16 px-4 bg-gray-50" data-aos="fade-up">
-            <!-- (tu portfolio) -->
-            <!-- ... -->
-        </section>
-
-        <section class="py-16 px-4 bg-white" data-aos="fade-up">
-            <!-- (garantías) -->
-            <!-- ... -->
-        </section>
-
-        <section id="gemini-diagnostico" class="py-16 px-4 bg-gray-50" data-aos="fade-up">
-            <!-- (diagnóstico IA) -->
-            <!-- ... -->
-        </section>
-
-        <section id="process" class="py-16 px-4 bg-white" data-aos="fade-up">
-            <!-- (proceso 5 pasos) -->
-            <!-- ... -->
-        </section>
-    </main>
-
-    <footer class="gradient-bg text-white py-12 px-4" data-aos="fade-up">
-        <div class="max-w-6xl mx-auto text-center">
-            <h3 class="text-2xl font-bold mb-4">¿Listo para que tu negocio sea imposible de ignorar?</h3>
-            <p class="text-xl mb-8">Hablemos y veamos cómo podés empezar a generar más ventas desde mañana.</p>
-            <a href="https://wa.me/5493434150664?text=Hola%20Matias!%20Vi%20tu%20portfolio%20y%20quiero%20saber%20cómo%20podés%20ayudar%20a%20mi%20negocio." target="_blank" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 inline-block pulse-animation">CONTACTAR POR WHATSAPP</a>
-            <div class="mt-8 text-sm text-gray-300">
-                <p>Matías Fleischmann – ImanVisual.ar | Diamante, Entre Ríos, Argentina.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- 1 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">🚀 1. Inicio Estratégico</h3>
+              <p class="text-gray-600 mb-4">Ideal para empezar a generar impacto y conseguir resultados rápidos.</p>
+              <div class="text-3xl font-black text-[#0A2342] mb-2">$115.000 ARS</div>
+              <div class="text-sm text-gray-500">(pago único)</div>
             </div>
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>1 Video Vendedor (Reel):</strong> Guion optimizado para convertir vistas en clientes.</span></li>
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>Producción Completa:</strong> Me encargo de la grabación y edición profesional.</span></li>
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>Mini-Diagnóstico de Perfil:</strong> Análisis para optimizar tu cuenta y atraer tráfico cualificado.</span></li>
+            </ul>
+            <a href="https://wa.me/5493434150664?text=Hola%20Matias!%20Me%20interesa%20el%20servicio%20de%20Inicio%20Estratégico." class="block w-full bg-[#0A2342] text-white text-center py-3 rounded-xl font-bold hover:bg-[#2C6E8F] transition-colors duration-300">¡Quiero Empezar Ya!</a>
+          </div>
+
+          <!-- 2 -->
+          <div class="bg-white rounded-xl shadow-2xl p-8 border-4 border-yellow-400 transition-all duration-300 relative flex flex-col">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2"><span class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap">MÁS ELEGIDO</span></div>
+            <div class="text-center mb-6 mt-4">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">💪 2. Crecimiento Constante</h3>
+              <p class="text-gray-600 mb-4">Tu máquina de contenido mensual para un flujo constante de clientes.</p>
+              <div class="text-3xl font-black text-[#0A2342] mb-2">$290.000 ARS</div>
+              <div class="text-sm text-gray-500">/ mes</div>
+            </div>
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>Retorno de Inversión Asegurado:</strong> Diseñado para que se pague solo con 1-2 ventas extra al mes.</span></li>
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>4 Videos Vendedores/Mes:</strong> Producción y guion estratégico para mantener el interés.</span></li>
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg><span class="text-gray-700"><strong>Gestión de Contenido:</strong> Posteos e historias para mantener tu marca siempre activa y presente.</span></li>
+            </ul>
+            <a href="https://wa.me/5493434150664?text=Hola%20Matias!%20Quiero%20contratar%20el%20servicio%20de%20Crecimiento%20Constante." class="block w-full bg-yellow-400 text-gray-900 text-center py-3 rounded-xl font-bold hover:bg-yellow-300 transition-colors duration-300">¡Quiero Crecer!</a>
+          </div>
+
+          <!-- 3 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">👑 3. Liderazgo de Mercado</h3>
+              <p class="text-gray-600 mb-4">El servicio integral para dominar tu nicho y ser el referente indiscutido.</p>
+              <div class="text-3xl font-black text-[#0A2342] mb-2">$520.000 ARS</div>
+              <div class="text-sm text-gray-500">/ mes</div>
+            </div>
+            <ul class="space-y-4 mb-8 flex-grow">
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>Estrategia Integral:</strong> Superá a tu competencia con una estrategia de contenido y visibilidad 360°.</span></li>
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>8 Videos Premium/Mes:</strong> Cobertura total de contenido para dominar las redes.</span></li>
+              <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700"><strong>Garantía por Contrato:</strong> Resultados y entregables definidos y garantizados por contrato.</span></li>
+            </ul>
+            <a href="https://wa.me/5493434150664?text=Hola%20Matias!%20Estoy%20interesado%20en%20el%20servicio%20de%20Liderazgo%20de%20Mercado." class="block w-full bg-[#0A2342] text-white text-center py-3 rounded-xl font-bold hover:bg-[#2C6E8F] transition-colors duration-300">¡Quiero Dominar mi Mercado!</a>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", ()=>{AOS.init();});
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-16 px-4 bg-gray-50" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-12 text-gray-800">Mi Portfolio: Casos de Éxito</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Caso 1 -->
+          <a href="https://www.tiktok.com/@imanvisual.ar/video/7549788814055722296" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="relative">
+              <img src="https://placehold.co/400x300/FBBF24/0A2342?text=DÚPLEX+ALQUILADO" alt="Video inmobiliaria" class="w-full h-48 object-cover">
+              <div class="play-button"><svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3.222v13.556c0 .75.875 1.222 1.5.833l10.833-6.778a1 1 0 000-1.666L5.5.389C4.875 0 4 .472 4 1.222z"/></svg></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Alquiler en tiempo récord</h3>
+              <p class="text-gray-600 mb-4 text-sm"><span class="font-bold">Desafío:</span> Un dúplex llevaba meses sin recibir consultas. <span class="font-bold">Solución:</span> Un video-recorrido dinámico. <span class="font-bold">Resultado:</span> Se alquiló en 14 días.</p>
+              <div class="flex justify-between text-sm text-gray-500">
+                <span><span class="font-bold text-[#2C6E8F]">¡ALQUILADO!</span></span>
+                <span>👥 +21 seguidores</span>
+              </div>
+            </div>
+          </a>
+          <!-- Caso 2 -->
+          <a href="https://www.tiktok.com/@imanvisual.ar/video/7538611372507057414" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="relative">
+              <img src="https://placehold.co/400x300/0A2342/FFFFFF?text=BALNEARIO+HISTORIA" alt="Video turismo" class="w-full h-48 object-cover">
+              <div class="play-button"><svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3.222v13.556c0 .75.875 1.222 1.5.833l10.833-6.778a1 1 0 000-1.666L5.5.389C4.875 0 4 .472 4 1.222z"/></svg></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Turismo: Alcance Masivo</h3>
+              <p class="text-gray-600 mb-4 text-sm"><span class="font-bold">Desafío:</span> Reactivar interés fuera de temporada. <span class="font-bold">Solución:</span> Un video emotivo sobre la historia del lugar. <span class="font-bold">Resultado:</span> 124 hs de visibilidad de marca.</p>
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>👁️ 28K vistas</span>
+                <span>👥 +90 seguidores</span>
+              </div>
+            </div>
+          </a>
+          <!-- Caso 3 -->
+          <a href="https://www.tiktok.com/@imanvisual.ar/video/7539311084914707717" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="relative">
+              <img src="https://placehold.co/400x300/2C6E8F/FFFFFF?text=CULTURA+LOCAL" alt="Video cultura local" class="w-full h-48 object-cover">
+              <div class="play-button"><svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3.222v13.556c0 .75.875 1.222 1.5.833l10.833-6.778a1 1 0 000-1.666L5.5.389C4.875 0 4 .472 4 1.222z"/></svg></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Cultura Local: Engagement</h3>
+              <p class="text-gray-600 mb-4 text-sm"><span class="font-bold">Desafío:</span> Generar orgullo local. <span class="font-bold">Solución:</span> Un reel con tomas de dron. <span class="font-bold">Resultado:</span> Alto engagement y +25 h de reproducción.</p>
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>👁️ 7.9K vistas</span>
+                <span>👍 91 Me Gusta</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        function realizarDiagnostico(){
-            const url=document.getElementById('perfilUrlInput').value.trim();
-            if(!url||!url.startsWith('http')){alert('⚠️ Ingresá un link válido.');return;}
-            const res=document.getElementById('diagnosticoResult');
-            const txt=document.getElementById('diagnosticoText');
-            const load=document.getElementById('diagnosticoLoader');
-            const btn=document.getElementById('diagnosticoBtn');
-            const label=document.getElementById('btnText');
-            btn.disabled=true;label.textContent='ANALIZANDO...';load.classList.remove('hidden');res.classList.add('hidden');
-            setTimeout(()=>{
-                txt.textContent=generarReporteSimulado(url);
-                res.classList.remove('hidden');load.classList.add('hidden');
-                btn.disabled=false;label.textContent='ANALIZAR OTRO PERFIL';
-                res.scrollIntoView({behavior:'smooth'});
-            },2000);
-        }
+    <!-- GARANTÍA -->
+    <section class="py-16 px-4 bg-white" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-black mb-4">
+            <span class="gradient-bg bg-clip-text text-transparent">Mi Garantía de Compromiso y Resultados</span> ✅
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center p-8 bg-gray-50 rounded-xl">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"><svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Entrega Asegurada</h3>
+            <p class="text-gray-600">Todo el contenido se entrega en tiempo y forma. Si hay un error, trabajo sin costo extra hasta cumplir lo acordado.</p>
+          </div>
+          <div class="text-center p-8 bg-gray-50 rounded-xl">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6"><svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg></div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Resultados en 30 Días</h3>
+            <p class="text-gray-600">Si en 30 días no ves mejoras, ajusto la estrategia y creo contenido extra sin cargo.</p>
+          </div>
+          <div class="text-center p-8 bg-gray-50 rounded-xl">
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6"><svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Calidad Premium</h3>
+            <p class="text-gray-600">Si el video final no cumple tus expectativas, lo regrabo o reedito hasta tu satisfacción.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        function generarReporteSimulado(url){
-            const plataforma=url.includes('instagram')?'Instagram':url.includes('tiktok')?'TikTok':'perfil';
-            const problemas=[
-                "La biografía no comunica claramente la propuesta de valor.",
-                "El llamado a la acción (CTA) no es visible.",
-                "La calidad visual podría mejorar.",
-                "Falta consistencia de colores y estilo.",
-                "Poco uso de videos para mostrar el servicio.",
-                "No se aprovechan historias destacadas.",
-                "Baja interacción en comentarios."
-            ];
-            const detectados=problemas.sort(()=>0.5-Math.random()).slice(0,3);
-            const recomendaciones=[
-                "Mostrar el detrás de escena en reels.",
-                "Publicar testimonios de clientes.",
-                "Hacer sesión de fotos profesional.",
-                "Optimizar la biografía con link a WhatsApp."
-            ];
-            const rec=recomendaciones[Math.floor(Math.random()*recomendaciones.length)];
-            return `## REPORTE DE VISIBILIDAD\n\n**URL:** ${url}\n\n### PUNTOS CRÍTICOS\n${detectados.map(p=>`- ${p}`).join('\n')}\n\n**Calificación:** Media. Se pierden oportunidades de venta.\n\n### RECOMENDACIÓN\nComenzá por: **${rec}**`;
-        }
+    <!-- DIAGNÓSTICO IA -->
+    <section id="gemini-diagnostico" class="py-16 px-4 bg-gray-50" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-black mb-4 text-gray-800">Análisis Gratis: ¿Tu Perfil Vende o Solo Existe? 🔎</h2>
+          <p class="text-xl text-gray-600">Pegá el link de tu cuenta y mi asistente de IA te dará un reporte inmediato sobre tus oportunidades de mejora.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-2xl p-8">
+          <div class="mb-6">
+            <label for="perfilUrlInput" class="block text-lg font-semibold text-gray-700 mb-3">Pegá la URL de tu perfil de Instagram o TikTok:</label>
+            <input type="url" id="perfilUrlInput" placeholder="https://instagram.com/tu_negocio" class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none text-lg">
+          </div>
+          <button onclick="realizarDiagnostico()" id="diagnosticoBtn" class="w-full bg-yellow-400 text-gray-900 py-4 rounded-xl font-bold text-xl hover:bg-yellow-300 transition-all duration-300 flex items-center justify-center">
+            <span id="btnText">DIAGNÓSTICO INMEDIATO CON IA</span>
+            <div id="diagnosticoLoader" class="spinner ml-3 hidden"></div>
+          </button>
+          <div id="diagnosticoResult" class="mt-8 hidden">
+            <div class="bg-gradient-to-r from-blue-50 to-yellow-50 rounded-xl p-6 border-l-4 border-yellow-400">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">📊 Resultado de tu Diagnóstico</h3>
+              <pre class="whitespace-pre-wrap font-sans text-base leading-relaxed" id="diagnosticoText"></pre>
+              <div class="mt-6 p-4 bg-white rounded-lg border-2 border-yellow-400">
+                <p class="text-lg font-semibold text-gray-800 mb-3">💡 <strong>Próximos pasos:</strong></p>
+                <p class="text-gray-700 mb-4">¿Querés aplicar estas mejoras y empezar a ver resultados? Hablemos.</p>
+                <a href="https://wa.me/5493434150664?text=Hola%20Matias!%20Recibí%20el%20diagnóstico%20de%20mi%20perfil%20y%20quiero%20conversar%20sobre%20cómo%20podés%20ayudarme." target="_blank" class="inline-block bg-green-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-600 transition-colors duration-300">
+                  HABLAR CON MATÍAS AHORA
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        document.querySelectorAll('a[href^="#"]').forEach(a=>{
-            a.addEventListener('click',e=>{
-                e.preventDefault();
-                const t=document.querySelector(a.getAttribute('href'));
-                if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
-            });
-        });
-    </script>
+    <!-- MÉTODO -->
+    <section id="process" class="py-16 px-4 bg-white" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-black text-gray-800">Mi Método de Trabajo: Directo a Resultados ⚙️</h2>
+          <p class="mt-4 text-lg text-gray-600">Un proceso de 5 pasos, lógico y transparente, enfocado 100% en generar un retorno de tu inversión.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-yellow-400 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center justify-center w-12 h-12 bg-yellow-400 text-gray-900 rounded-full font-black text-2xl mx-auto mb-4">1</div>
+            <h3 class="text-xl font-bold text-center text-[#0A2342] mb-2">Diagnóstico</h3>
+            <p class="text-center text-gray-600 text-sm">Analizamos negocio, competencia y público para detectar oportunidades no explotadas.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-yellow-400 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center justify-center w-12 h-12 bg-yellow-400 text-gray-900 rounded-full font-black text-2xl mx-auto mb-4">2</div>
+            <h3 class="text-xl font-bold text-center text-[#0A2342] mb-2">Estrategia</h3>
+            <p class="text-center text-gray-600 text-sm">Plan de contenidos y guiones persuasivos alineados a tu cliente ideal.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-yellow-400 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center justify-center w-12 h-12 bg-yellow-400 text-gray-900 rounded-full font-black text-2xl mx-auto mb-4">3</div>
+            <h3 class="text-xl font-bold text-center text-[#0A2342] mb-2">Producción</h3>
+            <p class="text-center text-gray-600 text-sm">Videos y fotos de alta calidad que capturan la atención al instante.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-yellow-400 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center justify-center w-12 h-12 bg-yellow-400 text-gray-900 rounded-full font-black text-2xl mx-auto mb-4">4</div>
+            <h3 class="text-xl font-bold text-center text-[#0A2342] mb-2">Publicación</h3>
+            <p class="text-center text-gray-600 text-sm">Distribución en momentos clave con textos y CTAs que invitan a comprar.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-yellow-400 transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="flex items-center justify-center w-12 h-12 bg-yellow-400 text-gray-900 rounded-full font-black text-2xl mx-auto mb-4">5</div>
+            <h3 class="text-xl font-bold text-center text-[#0A2342] mb-2">Optimización</h3>
+            <p class="text-center text-gray-600 text-sm">Medición y ajustes continuos para maximizar ventas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gradient-bg text-white py-12 px-4" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-4">¿Listo para que tu negocio sea imposible de ignorar?</h3>
+      <p class="text-xl mb-8">Hablemos y veamos cómo podés empezar a generar más ventas desde mañana.</p>
+      <a href="https://wa.me/5493434150664?text=Hola%20Matias!%20Vi%20tu%20portfolio%20y%20quiero%20saber%20cómo%20podés%20ayudar%20a%20mi%20negocio." target="_blank" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 inline-block pulse-animation">
+        CONTACTAR POR WHATSAPP
+      </a>
+      <div class="mt-8 text-sm text-gray-300">
+        <p>Matías Fleischmann - ImanVisual.ar | Diamante, Entre Ríos, Argentina.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{AOS.init();});
+
+    function realizarDiagnostico(){
+      const urlInput=document.getElementById('perfilUrlInput');
+      const perfilUrl=urlInput.value.trim();
+      const resultDiv=document.getElementById('diagnosticoResult');
+      const resultText=document.getElementById('diagnosticoText');
+      const loader=document.getElementById('diagnosticoLoader');
+      const button=document.getElementById('diagnosticoBtn');
+      const btnText=document.getElementById('btnText');
+
+      if(!perfilUrl||!perfilUrl.startsWith('http')){alert('⚠️ Por favor, introduce un link de perfil válido.');return;}
+
+      button.disabled=true; btnText.textContent='ANALIZANDO...';
+      loader.classList.remove('hidden'); resultDiv.classList.add('hidden');
+
+      setTimeout(()=>{
+        const reporteSimulado=generarReporteSimulado(perfilUrl);
+        resultText.textContent=reporteSimulado;
+        resultDiv.classList.remove('hidden'); loader.classList.add('hidden');
+        button.disabled=false; btnText.textContent='ANALIZAR OTRO PERFIL';
+        resultDiv.scrollIntoView({behavior:'smooth'});
+      },2000);
+    }
+
+    function generarReporteSimulado(url){
+      const plataforma=url.includes('instagram')?'Instagram':url.includes('tiktok')?'TikTok':'perfil';
+      const problemasComunes=[
+        "La biografía no comunica claramente la propuesta de valor.",
+        "El llamado a la acción (CTA) para contactar o comprar no es visible.",
+        "La calidad visual de las últimas publicaciones podría mejorar.",
+        "Falta de consistencia en el estilo gráfico y los colores de la marca.",
+        "Poco uso de videos (Reels/TikToks) para mostrar el producto/servicio.",
+        "No se aprovechan las historias destacadas para guiar a los clientes.",
+        "Baja interacción en los comentarios, lo que sugiere poca comunidad."
+      ];
+      const problemasDetectados=[...problemasComunes].sort(()=>0.5-Math.random()).slice(0,3);
+      const recomendaciones=[
+        "Crear videos cortos mostrando el 'detrás de escena' de tu negocio.",
+        "Publicar testimonios de clientes satisfechos para generar confianza.",
+        "Realizar una sesión de fotos profesional de tus productos/servicios.",
+        "Optimizar la biografía con un link claro hacia WhatsApp o tu tienda."
+      ];
+      const recomendacionPrincipal=recomendaciones[Math.floor(Math.random()*recomendaciones.length)];
+
+      let reporte=`## REPORTE DE VISIBILIDAD\n\n`;
+      reporte+=`**URL Analizada:** ${url}\n\n`;
+      reporte+=`### 1. PUNTOS CRÍTICOS DETECTADOS\nSe han identificado las siguientes áreas de mejora en tu ${plataforma}:\n\n`;
+      problemasDetectados.forEach(p=>{reporte+=`- ${p}\n`;});
+      reporte+=`\n**Calificación de Visibilidad Actual:** Media. Hay base pero se pierden oportunidades de venta.\n\n`;
+      reporte+=`### 2. RECOMENDACIÓN ESTRATÉGICA\nPara un impacto inmediato, comenzá por: **${recomendacionPrincipal}**`;
+      return reporte;
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click',e=>{
+        e.preventDefault();
+        const target=document.querySelector(anchor.getAttribute('href'));
+        if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
+      });
+    });
+  </script>
 </body>
 </html>
