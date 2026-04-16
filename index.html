@@ -1,1 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImánVisual — Posicionamiento estratégico para negocios</title>
+<meta name="description" content="El problema no es el marketing. Es el posicionamiento. Diagnóstico y contenido estratégico para negocios en Argentina.">
+<meta property="og:title" content="ImánVisual — Posicionamiento para negocios">
+<meta property="og:description" content="El problema no es el marketing. Es el posicionamiento.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crema: #F5F3EE;
+    --negro: #0A0A0A;
+    --rojo: #D42B1A;
+    --gris: #888888;
+    --gris-claro: #E0DED9;
+    --blanco: #FFFFFF;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--crema);
+    color: var(--negro);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1a1a1a;
+    padding: 0 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: var(--crema);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--rojo); }
+
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 2px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--crema); background: #1a1a1a; }
+
+  .nav-links a.cta-nav {
+    background: var(--rojo);
+    color: var(--crema);
+    font-weight: 600;
+  }
+
+  .nav-links a.cta-nav:hover { background: #b82315; }
+
+  /* ── HERO ── */
+  #inicio {
+    background: var(--negro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 32px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 60%, #1a0806 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-line-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--rojo);
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+
+  .hero-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 12vw, 160px);
+    line-height: 0.88;
+    letter-spacing: 3px;
+    color: var(--crema);
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .hero-titulo span { color: var(--rojo); }
+
+  .hero-divider {
+    width: 48px;
+    height: 3px;
+    background: var(--rojo);
+    margin: 36px auto;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .hero-tagline {
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--gris);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 560px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease 0.4s both;
+  }
+
+  .hero-tagline strong { color: var(--crema); font-weight: 500; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease 0.5s both;
+  }
+
+  /* ── VIDEO ── */
+  #video {
+    background: var(--negro);
+    padding: 80px 32px;
+  }
+
+  .section-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #1e1e1e;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #1e1e1e;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  .video-caption {
+    font-size: 13px;
+    color: var(--gris);
+    text-align: center;
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  /* ── PRECIOS ── */
+  #precios {
+    background: var(--crema);
+    padding: 100px 32px;
+  }
+
+  .precios-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .section-label-dark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label-dark::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gris-claro);
+  }
+
+  .section-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1;
+    letter-spacing: 2px;
+    color: var(--negro);
+    margin-bottom: 48px;
+  }
+
+  .card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-claro);
+    border-radius: 4px;
+    padding: 28px 28px 24px;
+    margin-bottom: 16px;
+    position: relative;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-destacada {
+    border-color: var(--negro);
+    border-width: 2px;
+  }
+
+  .badge {
+    position: absolute;
+    top: -1px; right: 20px;
+    background: var(--negro);
+    color: var(--blanco);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .card-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    color: var(--rojo);
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+  }
+
+  .card-nombre {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--gris);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .card-incluye {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+
+  .card-incluye li {
+    font-size: 13px;
+    color: #333;
+    padding: 6px 0 6px 18px;
+    position: relative;
+    border-bottom: 1px solid #f0eeea;
+  }
+
+  .card-incluye li:last-child { border-bottom: none; }
+
+  .card-incluye li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--rojo);
+    font-size: 11px;
+    top: 7px;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 16px;
+    border-top: 1px solid var(--gris-claro);
+  }
+
+  .card-entrega {
+    font-size: 11px;
+    color: var(--gris);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .card-precio {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--negro);
+    line-height: 1;
+  }
+
+  .card-precio-sub {
+    font-size: 11px;
+    color: var(--gris);
+    display: block;
+    text-align: right;
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  /* ── CURSO ── */
+  #curso {
+    background: var(--negro);
+    padding: 100px 32px;
+  }
+
+  .curso-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .dos-caminos {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 4px;
+    padding: 40px 36px;
+    margin-top: 32px;
+  }
+
+  .caminos-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--crema);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .caminos-desc {
+    font-size: 15px;
+    color: var(--gris);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
+  .caminos-desc strong { color: var(--crema); font-weight: 500; }
+
+  .caminos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .camino-card {
+    background: #0A0A0A;
+    border: 1px solid #222;
+    border-radius: 4px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+
+  .camino-card:hover { border-color: var(--rojo); }
+
+  .camino-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 8px;
+  }
+
+  .camino-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--crema);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .camino-desc {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* ── CONTACTO ── */
+  #contacto {
+    background: var(--crema);
+    padding: 100px 32px;
+  }
+
+  .contacto-inner {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contacto-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1;
+    letter-spacing: 2px;
+    color: var(--negro);
+    margin-bottom: 8px;
+  }
+
+  .contacto-titulo span { color: var(--rojo); }
+
+  .contacto-sub {
+    font-size: 15px;
+    color: var(--gris);
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .contacto-sub strong { color: var(--negro); font-weight: 500; }
+
+  .contacto-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .contacto-marca {
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 1px;
+  }
+
+  /* ── BOTONES ── */
+  .btn {
+    display: inline-block;
+    padding: 16px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 2px solid transparent;
+    transition: all 0.15s ease;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background: var(--negro);
+    color: var(--crema);
+    border-color: var(--negro);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--negro);
+  }
+
+  .btn-rojo {
+    background: var(--rojo);
+    color: var(--crema);
+    border-color: var(--rojo);
+  }
+
+  .btn-rojo:hover { background: #b82315; border-color: #b82315; }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--negro);
+    border-color: var(--negro);
+  }
+
+  .btn-outline:hover {
+    background: var(--negro);
+    color: var(--crema);
+  }
+
+  .btn-outline-crema {
+    background: transparent;
+    color: var(--crema);
+    border-color: #333;
+  }
+
+  .btn-outline-crema:hover {
+    background: #1a1a1a;
+    border-color: var(--crema);
+  }
+
+  .btn-full { width: 100%; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--negro);
+    padding: 32px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 3px solid var(--rojo);
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--crema);
+  }
+
+  .footer-logo span { color: var(--rojo); }
+
+  .footer-info {
+    font-size: 12px;
+    color: #444;
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  .footer-frase {
+    font-size: 11px;
+    color: #333;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  /* ── ANIMACIONES ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 4px; }
+    .nav-links a { padding: 6px 10px; font-size: 11px; letter-spacing: 1px; }
+    #inicio, #video, #precios, #curso, #contacto { padding-left: 20px; padding-right: 20px; }
+    .caminos-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    .hero-ctas .btn { width: 100%; max-width: 320px; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-info { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">IMÁN<span>VISUAL</span></a>
+  <ul class="nav-links">
+    <li><a href="#video">Video</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#curso">Curso</a></li>
+    <li><a href="#contacto" class="cta-nav">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-line-top"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-eyebrow">Posicionamiento estratégico para negocios · Argentina</div>
+  <h1 class="hero-titulo">
+    IMÁN<span>VISUAL</span>
+  </h1>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">
+    El problema no es el marketing.<br>
+    <strong>Es el posicionamiento.</strong>
+  </p>
+  <div class="hero-ctas">
+    <a href="#video" class="btn btn-rojo">Mirá el video primero</a>
+    <a href="#precios" class="btn btn-outline-crema">Ver precios</a>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="section-inner">
+    <div class="section-label">Mirá esto primero</div>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/qHKuy453vEQ"
+        title="El problema no es el marketing — ImánVisual"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-caption">3 minutos que explican por qué tu negocio no está siendo elegido.</p>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="precios-inner">
+    <div class="section-label-dark">4 formas de trabajar juntos</div>
+    <h2 class="section-titulo">Elegí tu punto<br>de arranque</h2>
+
+    <!-- 01 DIAGNÓSTICO -->
+    <div class="card reveal">
+      <div class="card-num">01 — DIAGNÓSTICO</div>
+      <div class="card-nombre">Diagnóstico ImánVisual</div>
+      <div class="card-desc">Análisis completo de tu negocio para entender exactamente por qué no te están eligiendo y qué cambiar.</div>
+      <ul class="card-incluye">
+        <li>Análisis de tu perfil y mensaje actual</li>
+        <li>Identificación de los 3 errores de posicionamiento más críticos</li>
+        <li>Video personalizado de 15 minutos con recomendaciones concretas</li>
+        <li>Sin compromiso de continuar</li>
+      </ul>
+      <div class="card-footer">
+        <div class="card-entrega">Entrega en 48hs</div>
+        <div>
+          <div class="card-precio">$120.000</div>
+          <span class="card-precio-sub">pago único · ARS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 ARRANQUE -->
+    <div class="card card-destacada reveal">
+      <div class="badge">Más elegido</div>
+      <div class="card-num">02 — ARRANQUE</div>
+      <div class="card-nombre">Arranque</div>
+      <div class="card-desc">6 Reels + 2 carruseles + 4 Stories + 2 posts + calendario. Entrega en 7 días.</div>
+      <ul class="card-incluye">
+        <li>6 Reels con guion, grabación y edición completa</li>
+        <li>2 carruseles estratégicos</li>
+        <li>4 Stories diseñadas</li>
+        <li>2 posts estáticos</li>
+        <li>Calendario de publicación del mes</li>
+      </ul>
+      <div class="card-footer">
+        <div class="card-entrega">Entrega en 7 días</div>
+        <div>
+          <div class="card-precio">$420.000</div>
+          <span class="card-precio-sub">pago único · ARS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 PRESENCIA MENSUAL -->
+    <div class="card reveal">
+      <div class="card-num">03 — PRESENCIA MENSUAL</div>
+      <div class="card-nombre">Presencia Mensual</div>
+      <div class="card-desc">Vos definís los temas, yo produzco todo. Ejecución pura sin estrategia incluida.</div>
+      <ul class="card-incluye">
+        <li>12 Reels mensuales (guion + grabación + edición)</li>
+        <li>4 carruseles estratégicos</li>
+        <li>4 Stories diseñadas</li>
+        <li>Calendario mensual organizado</li>
+      </ul>
+      <div class="card-footer">
+        <div class="card-entrega">Entrega mensual continua</div>
+        <div>
+          <div class="card-precio">$580.000</div>
+          <span class="card-precio-sub">por mes · ARS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 POSICIONAMIENTO COMPLETO -->
+    <div class="card reveal">
+      <div class="card-num">04 — POSICIONAMIENTO COMPLETO</div>
+      <div class="card-nombre">Posicionamiento Completo</div>
+      <div class="card-desc">Por 3 meses: estrategia presencial desde cero, totalmente personalizado + acompañamiento + 24 publicaciones mensuales + perfil optimizado.</div>
+      <ul class="card-incluye">
+        <li>Visita presencial a tu negocio</li>
+        <li>Estrategia de posicionamiento completa desde cero</li>
+        <li>24 publicaciones por mes (Reels + carruseles + Stories)</li>
+        <li>Perfil de redes optimizado</li>
+        <li>Pago total o en cuotas</li>
+      </ul>
+      <div class="card-footer">
+        <div class="card-entrega">3 meses completos</div>
+        <div>
+          <div class="card-precio">$1.800.000</div>
+          <span class="card-precio-sub">pago total o en cuotas · ARS</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; text-align: center;">
+      <a href="#contacto" class="btn btn-primary">¿No sabés cuál elegir? Escribime</a>
+    </div>
+  </div>
+</section>
+
+<!-- CURSO -->
+<section id="curso">
+  <div class="curso-inner">
+    <div class="section-label">Dos caminos</div>
+
+    <div class="dos-caminos reveal">
+      <div class="caminos-titulo">TENÉS DOS CAMINOS</div>
+      <p class="caminos-desc">
+        Podés <strong>aprender a comunicar tu negocio</strong><br>
+        o podés <strong>dejar que alguien lo haga por vos.</strong><br><br>
+        En ambos casos vas a lograr lo mismo: dejar de competir por precio y empezar a ser elegido por valor. La diferencia es cómo querés hacerlo.
+      </p>
+
+      <div class="caminos-grid">
+        <div class="camino-card">
+          <div class="camino-label">Sin depender de nadie</div>
+          <div class="camino-titulo">APRENDER A COMUNICAR MI NEGOCIO</div>
+          <div class="camino-desc">Aprendés el sistema de posicionamiento y lo aplicás vos mismo. Independencia total.</div>
+          <a href="https://wa.me/543434150664?text=Hola%20Mati%2C%20quiero%20aprender%20a%20comunicar%20mi%20negocio" class="btn btn-outline-crema btn-full">Quiero aprender</a>
+        </div>
+        <div class="camino-card">
+          <div class="camino-label">Quiero que lo hagan por mí</div>
+          <div class="camino-titulo">POSICIONAR MI NEGOCIO CON AYUDA</div>
+          <div class="camino-desc">Me encargo de todo. Vos aparecés, yo produzco el contenido que te posiciona.</div>
+          <a href="https://wa.me/543434150664?text=Hola%20Mati%2C%20quiero%20que%20me%20ayudes%20a%20posicionar%20mi%20negocio" class="btn btn-rojo btn-full">Quiero que lo hagan por mí</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div class="section-label-dark" style="justify-content: center; text-align:center;">Contacto</div>
+    <h2 class="contacto-titulo">¿NO SABÉS POR<br><span>DÓNDE ARRANCAR?</span></h2>
+    <p class="contacto-sub">
+      Escribime y lo definimos juntos en una charla corta.<br>
+      <strong>Sin presión, pero con una dirección.</strong>
+    </p>
+
+    <div class="contacto-opciones">
+      <a href="https://wa.me/543434150664?text=Hola%20Mati%2C%20vi%20tu%20propuesta%20y%20quiero%20saber%20qu%C3%A9%20opci%C3%B3n%20me%20conviene" class="btn btn-primary btn-full">
+        Escribime por WhatsApp
+      </a>
+      <a href="https://wa.me/543434150664?text=Hola%20Mati%2C%20quiero%20empezar%20con%20el%20Diagn%C3%B3stico" class="btn btn-outline btn-full">
+        Empezar con el Diagnóstico — $120.000
+      </a>
+    </div>
+
+    <p class="contacto-marca">@imanvisual.ar · Instagram · TikTok · YouTube</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">IMÁN<span>VISUAL</span></div>
+  <div class="footer-info">
+    @imanvisual.ar<br>
+    Diamante, Entre Ríos · Argentina
+  </div>
+  <div class="footer-frase">El problema no es el marketing. Es el posicionamiento.</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav activo por sección
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 80;
+      if (window.scrollY >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.style.color = '';
+      if (link.getAttribute('href') === '#' + current) {
+        link.style.color = '#F5F3EE';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
